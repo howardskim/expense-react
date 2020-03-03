@@ -59,17 +59,9 @@ exports.addTransaction = async (req, res, next) => {
         });
     }
 }
-
+//@desc Delete transaction
+//@route DELETE
 exports.deleteTransaction = async (req, res, next) => {
-    // console.log('req.body ', req.url.slice(1));
-    // const id = req.url.slice(1);
-    // await Transaction.findByIdAndDelete(id, function(err) {
-    //   if (err) res.status(500)
-    //   return res.status(200).json({
-    //     success: true
-    //   });
-    // });
-    console.log(req.params)
     try {
         const transaction = await Transaction.findById(req.params.id);
         if(!transaction){

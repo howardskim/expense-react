@@ -10,6 +10,8 @@ router
     .get(getTransactions)
     .post(addTransaction)
 
-router.route('/:id').delete(deleteTransaction)
+router
+    .route('/:id')
+    .delete(deleteTransaction)
 
 module.exports = router;
